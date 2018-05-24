@@ -1,0 +1,77 @@
+cur=getByte();
+b64='ld4LiOz3F0bpyCNgWQBkr6HahGM1f85ocJ9/VUeTEmwqDPIsuvnZYRKjX7+ASt2x'
+
+while cur ~= 0 do
+	byte1=cur;
+	res1=byte1*byte1;
+	res1=byte1*res1;
+	res1=res1*14;
+	res1=res1+byte1*byte1*5;
+	res1=res1+byte1*15;
+	res1=res1+125;
+	
+	--LOGPH('----one %x',res1)
+	i=0
+	while i<4 do
+		temp=rshift(res1,6*i)
+		temp=band(temp,63)+1
+		s=stringsub(b64,temp,temp)
+		putByte(s)
+		i=i+1
+	end
+	
+	savebyte=rshift(res1,6*4)%256
+	
+	x1=getByte()
+	x2=getByte()
+	x3=getByte()
+	x=x1+x2*256+x3*256*256
+	
+	
+	res2=savebyte
+	res2=res2+(x%149)*256
+	res2=res2+(x%213)*256*256
+	
+	--LOGPH('%x',res2)
+	i=0
+	while i<4 do
+		temp=rshift(res2,6*i)
+		temp=band(temp,63)+1
+		s=stringsub(b64,temp,temp)
+		putByte(s)
+		i=i+1
+	end
+	
+	res2=x%142
+	res2=res2+(x%66)*256
+	res2=res2+(x%121)*256*256
+	
+	--LOGPH('%x',res2)
+	i=0
+	while i<4 do
+		temp=rshift(res2,6*i)
+		temp=band(temp,63)+1
+		s=stringsub(b64,temp,temp)
+		putByte(s)
+		i=i+1
+	end
+
+	
+	res2=x%143
+	res2=res2+(x%78)*256
+	res2=res2+(x%242)*256*256
+	
+	--LOGPH('%x',res2)
+	i=0
+	while i<4 do
+		temp=rshift(res2,6*i)
+		temp=band(temp,63)+1
+		s=stringsub(b64,temp,temp)
+		putByte(s)
+		i=i+1
+	end
+	
+	cur=getByte()
+end
+
+

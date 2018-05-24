@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  AssemblyInfo.cpp
+  testdll.cpp
+  Generating Code...
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+  AssemblyInfo.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  testdll.vcxproj -> D:\proj\gslab\llua\testdll\Debug\testdll.exe
+  testdll.vcxproj -> D:\proj\gslab\llua\testdll\Debug\testdll.pdb (Partial PDB)

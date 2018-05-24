@@ -1,0 +1,29 @@
+i=2;
+i=i*2;
+print i;
+
+function aa(d,b,c)
+
+d=b+c;
+print d;
+end
+
+if 0>1 then aa(1,1,1);
+elseif 0>0 then aa(2,2,2);
+elseif 1>2 then aa(3,3,3);
+elseif 0>1 then aa(10,10,10);
+else aa(20,20,20);
+end
+
+print 999;
+bb=aa;
+bb(4,5*5,4);
+if 1<0 then bb(3,3,3);
+else bb(4,4*4,4);
+end
+
+
+while i<10 do
+print i;
+i=i+1;
+end

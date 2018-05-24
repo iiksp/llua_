@@ -1,0 +1,8 @@
+
+OP_e17da653=function(a,b) return a%b end
+OP_ea2f65d7=function(a,b) return a==b end
+OP_b8ffa3c2=function(a,b) return a~=b end
+OP_e37f48a6=function(a,b) return a<=b end
+OP_d56265d9=function(a,b) return a>=b end
+OP_b0cd87ba=function(a,b) return a<b end
+OP_ff577802=function(a,b) return a>b end
